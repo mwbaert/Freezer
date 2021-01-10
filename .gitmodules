@@ -1,0 +1,3 @@
+[submodule "JsQRScanner"]
+	path = JsQRScanner
+	url = https://github.com/jbialobr/JsQRScanner
