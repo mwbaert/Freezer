@@ -8,11 +8,11 @@ This is a web application to get an overview of your freezer inventory.
 * On the app's main screen you get an overview of your freezer inventory.
 * When you take something out, go to the GET tab and scan the QR code.
 
-To scan the QR codes, I use the JsQRScanner (https://github.com/jbialobr/JsQRScanner).
+To scan QR codes, I use the JsQRScanner (https://github.com/jbialobr/JsQRScanner).
 
 ## Hosting
 
-I run an apache web server with SSL support (which is required to get access to the camera). Instructions can be found here: https://www.raspberrypi.org/documentation/remote-access/web-server/apache.md and here:https://pimylifeup.com/raspberry-pi-ssl-lets-encrypt/
+I run an apache web server with SSL support (which is required to get access to the camera) on a raspberry pi. Instructions can be found here: https://www.raspberrypi.org/documentation/remote-access/web-server/apache.md and here:https://pimylifeup.com/raspberry-pi-ssl-lets-encrypt/
 
 ## Domain name
 
