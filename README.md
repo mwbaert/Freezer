@@ -18,4 +18,4 @@ I run an apache web server with SSL support (which is required to get access to 
 
 * I got a free domain name (www.mwbaert.tk) at 'freenom.com' which is valid for one year. 
 * When the server is down, check if the correct IP is linked with the domain name. This can be done on the freenom website.
-* Check the modem settings, make sure port 80 (HTTP) and 443 (HTTPS) are forwarded for the rpi. The local IP of the raspberry pi should also be the DMZ address.
+* Check the modem settings, make sure port 80 (HTTP) and 443 (HTTPS) are forwarded for the rpi.
