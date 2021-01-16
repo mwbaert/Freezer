@@ -1,3 +1,3 @@
-cp -r html ~/../../var/www/
+cp -r root ~/../../var/www/
 
 printf "Website released \n\r"
