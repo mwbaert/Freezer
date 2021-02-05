@@ -8,14 +8,18 @@ This is a web application to get an overview of your freezer inventory.
 * On the app's main screen you get an overview of your freezer inventory.
 * When you take something out, go to the GET tab and scan the QR code.
 
-To scan QR codes, I use the JsQRScanner (https://github.com/jbialobr/JsQRScanner).
+To scan QR codes, I use the [JsQRScanner](https://github.com/jbialobr/JsQRScanner).
 
 ## Hosting
 
-I run an apache web server with SSL support (which is required to get access to the camera) on a raspberry pi. Instructions can be found here: https://www.raspberrypi.org/documentation/remote-access/web-server/apache.md and here:https://pimylifeup.com/raspberry-pi-ssl-lets-encrypt/
+I run an apache web server with SSL support (which is required to get access to the camera) on a raspberry pi. Instructions can be found [here](https://www.raspberrypi.org/documentation/remote-access/web-server/apache.md) and [here](https://pimylifeup.com/raspberry-pi-ssl-lets-encrypt/).
 
 ## Domain name
 
 * I got a free domain name (www.mwbaert.tk) at 'freenom.com' which is valid for one year. 
 * When the server is down, check if the correct IP is linked with the domain name. This can be done on the freenom website.
 * Check the modem settings, make sure port 80 (HTTP) and 443 (HTTPS) are forwarded for the rpi.
+
+## REST API
+
+The api folder contains a node project which runs an API service. I followed [this](https://bezkoder.com/node-express-mongodb-crud-rest-api/) tutorial to create it. To run this application, you should install MongoDB.
