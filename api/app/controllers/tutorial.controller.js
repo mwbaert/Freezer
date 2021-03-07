@@ -12,8 +12,7 @@ exports.create = (req, res) => {
     // Create a Tutorial
     const tutorial = new Tutorial({
         title: req.body.title,
-        description: req.body.description,
-        published: req.body.published ? req.body.published : false
+        description: req.body.description
     });
 
     // Save Tutorial in the database
@@ -124,20 +123,6 @@ exports.deleteAll = (req, res) => {
             res.status(500).send({
                 message:
                     err.message || "Some error occurred while removing all tutorials."
-            });
-        });
-};
-
-// Find all published Tutorials
-exports.findAllPublished = (req, res) => {
-    Tutorial.find({ published: true })
-        .then(data => {
-            res.send(data);
-        })
-        .catch(err => {
-            res.status(500).send({
-                message:
-                    err.message || "Some error occurred while retrieving tutorials."
             });
         });
 };
