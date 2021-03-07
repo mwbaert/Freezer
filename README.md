@@ -23,3 +23,15 @@ I run an apache web server with SSL support (which is required to get access to 
 ## REST API
 
 The api folder contains a node project which runs an API service. I followed [this](https://bezkoder.com/node-express-mongodb-crud-rest-api/) tutorial to create it. To run this application, you should install MongoDB.
+
+Start MongoDB:
+
+`
+systemctl start mongod
+`
+
+Start server application:
+
+`
+node server.js
+`
