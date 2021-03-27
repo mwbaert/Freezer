@@ -1,7 +1,7 @@
 const db = require("../models");
-const Tutorial = db.tutorials;
+const Item = db.items;
 
-// Create and Save a new Tutorial
+// Create and Save a new Item
 exports.create = (req, res) => {
     // Validate request
     if (!req.body.title) {
@@ -9,61 +9,63 @@ exports.create = (req, res) => {
         return;
     }
 
-    // Create a Tutorial
-    const tutorial = new Tutorial({
+    // Create an Item
+    const item = new Item({
         title: req.body.title,
+        qrCode: req.body.qrCode,
+        monthsUntilExpiration: req.body.monthsUntilExpiration,
         description: req.body.description
     });
 
-    // Save Tutorial in the database
-    tutorial
-        .save(tutorial)
+    // Save Item in the database
+    item
+        .save(item)
         .then(data => {
             res.send(data);
         })
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while creating the Tutorial."
+                    err.message || "Some error occurred while creating an item."
             });
         });
 };
 
-// Retrieve all Tutorials from the database.
+// Retrieve all Items from the database.
 exports.findAll = (req, res) => {
     const title = req.query.title;
     var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
 
-    Tutorial.find(condition)
+    Item.find(condition)
         .then(data => {
             res.send(data);
         })
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while retrieving tutorials."
+                    err.message || "Some error occurred while retrieving items."
             });
         });
 };
 
-// Find a single Tutorial with an id
+// Find a single item with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    Tutorial.findById(id)
+    Item.findById(id)
         .then(data => {
             if (!data)
-                res.status(404).send({ message: "Not found Tutorial with id " + id });
+                res.status(404).send({ message: "Not found Item with id " + id });
             else res.send(data);
         })
         .catch(err => {
             res
                 .status(500)
-                .send({ message: "Error retrieving Tutorial with id=" + id });
+                .send({ message: "Error retrieving Item with id=" + id });
         });
 };
 
-// Update a Tutorial by the id in the request
+// Update an Item by the id in the request
 exports.update = (req, res) => {
     if (!req.body) {
         return res.status(400).send({
@@ -73,56 +75,56 @@ exports.update = (req, res) => {
 
     const id = req.params.id;
 
-    Tutorial.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    Item.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
         .then(data => {
             if (!data) {
                 res.status(404).send({
-                    message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found!`
+                    message: `Cannot update Item with id=${id}. Maybe Item was not found!`
                 });
-            } else res.send({ message: "Tutorial was updated successfully." });
+            } else res.send({ message: "Item was updated successfully." });
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error updating Tutorial with id=" + id
+                message: "Error updating Item with id=" + id
             });
         });
 };
 
-// Delete a Tutorial with the specified id in the request
+// Delete an Item with the specified id in the request
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    Tutorial.findByIdAndRemove(id)
+    Item.findByIdAndRemove(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({
-                    message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`
+                    message: `Cannot delete Item with id=${id}. Maybe Item was not found!`
                 });
             } else {
                 res.send({
-                    message: "Tutorial was deleted successfully!"
+                    message: "Item was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Could not delete Tutorial with id=" + id
+                message: "Could not delete Item with id=" + id
             });
         });
 };
 
-// Delete all Tutorials from the database.
+// Delete all Items from the database.
 exports.deleteAll = (req, res) => {
-    Tutorial.deleteMany({})
+    Item.deleteMany({})
         .then(data => {
             res.send({
-                message: `${data.deletedCount} Tutorials were deleted successfully!`
+                message: `${data.deletedCount} Items were deleted successfully!`
             });
         })
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while removing all tutorials."
+                    err.message || "Some error occurred while removing all items."
             });
         });
 };
