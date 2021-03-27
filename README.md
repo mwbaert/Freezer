@@ -22,16 +22,9 @@ I run an apache web server with SSL support (which is required to get access to 
 
 ## REST API
 
-The api folder contains a node project which runs an API service. I followed [this](https://bezkoder.com/node-express-mongodb-crud-rest-api/) tutorial to create it. To run this application, you should install MongoDB.
+I use [json-server](https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d) to set up a basic REST API.
 
-Start MongoDB:
+## QR generator
 
-`
-systemctl start mongod
-`
+A python script which generates a pdf of QR codes on request of the client.
 
-Start server application:
-
-`
-node server.js
-`
