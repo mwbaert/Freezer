@@ -1,0 +1,33 @@
+{
+  "items": [
+    {
+      "id": 0,
+      "name": "arrabiata",
+      "description": "",
+      "createdAt": ""
+    },
+    {
+      "id": 1,
+      "name": "prei-zalm",
+      "description": "",
+      "createdAt": "2021-03-27T12:15:29.231Z"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

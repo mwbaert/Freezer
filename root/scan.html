@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="js/JsQRScanner/JsQRScanner.css">
+
+    <title>Freezer</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mb-3">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">What's in our freezer?</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index.html">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./scan.html">Scan</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-12">
+                <div class="row-element-set row-element-set-QRScanner">
+                    <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+                    <noscript>
+                        <div class="row-element-set error_message">
+                            Your web browser must have JavaScript enabled
+                            in order for this application to display correctly.
+                        </div>
+                    </noscript>
+                    <div class="row-element-set error_message" id="secure-connection-message" style="display: none;"
+                        hidden>
+                        You may need to serve this page over a secure connection (https) to run JsQRScanner correctly.
+                    </div>
+                </div>
+
+                <h1>JsQRScanner example</h1>
+                <div class="row-element">
+                    <div class="FlexPanel detailsPanel QRScannerShort">
+                        <div class="FlexPanel shortInfoPanel">
+                            <div class="gwt-HTML">
+                                Point the webcam to a QR code.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row-element">
+                    <div class="qrscanner" id="scanner">
+                    </div>
+                </div>
+                <div class="row-element">
+                    <div class="form-field form-field-memo">
+                        <div class="form-field-caption-panel">
+                            <div class="gwt-Label form-field-caption">
+                                Scanned text
+                            </div>
+                        </div>
+                        <div class="FlexPanel form-field-input-panel">
+                            <textarea id="scannedTextMemo"
+                                class="textInput form-memo form-field-input textInput-readonly" rows="3" readonly>
+                      </textarea>
+                        </div>
+                    </div>
+                    <div class="form-field form-field-memo">
+                        <div class="form-field-caption-panel">
+                            <div class="gwt-Label form-field-caption">
+                                Scanned text history
+                            </div>
+                        </div>
+                        <div class="FlexPanel form-field-input-panel">
+                            <textarea id="scannedTextMemoHist"
+                                class="textInput form-memo form-field-input textInput-readonly" value="" rows="6"
+                                readonly>
+                      </textarea>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <a style="font-weight: bold;" href="https://github.com/jbialobr/JsQRScanner">The source code is hosted
+                    on GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <!-- JavaScript QR code scanner -->
+    <script type="text/javascript" src="js/JsQRScanner/js/jsqrscanner.nocache.js"></script>
+    <!-- Main -->
+    <script defer type="text/javascript" src="js/scan.js"></script>
+
+</body>
+
+</html>
